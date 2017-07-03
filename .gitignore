@@ -1,0 +1,16 @@
+# Directory patterns
+.ipynb_checkpoints
+
+# File patterns
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.pyg*
+*.snm
+*.spl
+*.synctex*
+*.toc
+*.pdf
