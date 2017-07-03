@@ -1,0 +1,304 @@
+%% Preámbulo
+%% ----------------------------------------------------------------------------
+\documentclass[12pt,a4paper]{practice}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{luximono}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{amstext}
+\usepackage{caption}
+\usepackage{charter}
+
+%% Settings
+%% ----------------------------------------------------------------------------
+% hyperref
+\hypersetup{
+    pdftitle={Atm\'{o}sferas Estelares - Pr\'{a}ctica 1},
+    pdfauthor={Mart\'{i}n Josemar\'{i}a Vuelta Rojas},
+    pdfpagelayout=OneColumn,
+    pdfnewwindow=true,
+    pdfdisplaydoctitle=true,
+    pdfstartview=XYZ,
+    plainpages=false,
+    unicode=true,
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    bookmarksopenlevel=3,
+    breaklinks=true,
+    colorlinks=true,
+    pdfborder={0 0 0}
+}
+
+% graphicx
+\graphicspath{{resources/img/}}
+
+% caption
+\captionsetup{
+    labelfont=bf,
+    textfont=it,
+    justification=centering,
+    width=0.9\textwidth,
+}
+
+%% Definicion de comandos
+%% ----------------------------------------------------------------------------
+\makeatletter
+
+%% Fuente de ancho fijo
+\renewcommand{\ttdefault}{lmtt}
+\renewcommand{\spanishtablename}{Tabla}
+
+\makeatother
+
+%% Documento
+%% ----------------------------------------------------------------------------
+\begin{document}
+    %% Titulo, autor y resumen --------------------------------------------------
+    \logo{unmsm.png}
+    \university{
+        Universidad Nacional Mayor de San Marcos\\
+        {
+            \scriptsize{
+                \textit{
+                    \textup{
+                        Universidad del Perú, Decana de América}
+                    }
+            }
+        }
+    }
+    \course{Atmósferas Estelares}
+    \title{Práctica N\textdegree\ 1}
+    \maketitle
+
+    \begin{problem}\label{prob:1}
+        Determine la \emph{longitud de onda equivalente} para cada una de las curvas de sensibilidad dadas en la tabla \ref{table:1}.
+
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{ c | c | c | c | c | c }
+                $\lambda(\mu)$  & $U_\lambda$  & $B_\lambda$  & $V_\lambda$  & $O_{\textit{d\'ia}}$  & $O_{\textit{noche}}$ \\
+                &  &  &  &  &  \\[-0.8em]\hline
+                &  &  &  &  &  \\[-0.8em]
+                0.28  & 0.00  &  &  &  &  \\
+                0.30  & 0.13  &  &  &  &  \\
+                0.32  & 0.60  &  &  &  &  \\
+                0.34  & 0.92  &  &  &  &  \\
+                0.36  & 1.00  & 0.00  &  &  &  \\
+                0.38  & 0.72  & 0.13  &  &  & 0.00 \\
+                0.40  & 0.09  & 0.92  &  &  & 0.02 \\
+                0.42  & 0.00  & 1.00  &  & 0.00  & 0.08 \\
+                0.44  &  & 0.92  &  & 0.02  & 0.21 \\
+                0.46  &  & 0.76  & 0.00  & 0.06  & 0.41 \\
+                0.48  &  & 0.56  & 0.01  & 0.14  & 0.65 \\
+                0.50  &  & 0.39  & 0.36  & 0.32  & 0.90 \\
+                0.52  &  & 0.20  & 0.91  & 0.71  & 0.96 \\
+                0.54  &  & 0.07  & 0.98  & 0.95  & 0.68 \\
+                0.56  &  & 0.00  & 0.80  & 1.00  & 0.35 \\
+                0.58  &  &  & 0.59  & 0.87  & 0.14 \\
+                0.60  &  &  & 0.39  & 0.63  & 0.05 \\
+                0.62  &  &  & 0.22  & 0.38  & 0.02 \\
+                0.64  &  &  & 0.09  & 0.18  & 0.01 \\
+                0.66  &  &  & 0.03  & 0.06  & 0.00 \\
+                0.68  &  &  & 0.01  & 0.02  &  \\
+                0.70  &  &  & 0.00  & 0.00  &  \\
+                \hline
+            \end{tabular}
+            \caption{
+                Curvas de sensibilidad de los filtros $U$, $B$ y $V$ del sistema fotométrico $UBV$, y del ojo humano para el día y la noche.
+            }\label{table:1}
+        \end{table}
+    \end{problem}
+
+    \begin{problem}\label{prob:2}
+        Caclular la \emph{longitud de onda efectiva} del filtro $V$ para el flujo de un cuerpo negro con las siguientes temperaturas: $T = 25000 K$, $T = 10000 K$, $T = 5000 K$.
+    \end{problem}
+
+    \begin{problem}\label{prob:3}
+        Se tiene el flujo de cuerpo negro observado con un receptor cuya curva de sensibilidad es la curva de sensibilidad del filtro $V$ del sistema fotometrico $UBV$. Determine la longitud de onda del flujo monocromático efectivo para las temperaturas $T = 25000 K$, $10000 K$ y $5000 K$.
+
+        \begin{recommendation}
+            Considerando que el flujo monocromático efectivo está dado por
+
+                $$\left\langle B\right\rangle = \frac{\displaystyle{\int_{0}^{\infty} V_{\lambda} B_{\lambda} \left(T\right) \mathrm{d}\lambda}}{\displaystyle{\int_{0}^{\infty} V_{\lambda} \mathrm{d}\lambda}},$$
+
+            determine para que valores de $\lambda$ se da la igualdad $\left\langle B\right\rangle = B_{\lambda} \left(T\right)$.
+        \end{recommendation}
+    \end{problem}
+
+    \begin{problem}\label{prob:4}
+        ¿Cuál es el cambio $\delta V$ en la magnitud $V$ del sistema fotmétrico $UBV$ que produce un cambio $\delta\lambda$ en la \emph{longitud de onda efectiva} calculada en \ref{prob:2}?
+
+        Calcular $\delta\lambda = {\lambda}_{eq} - {\lambda}_{eff}$.
+
+        \begin{recommendation}
+            Si $V = -2.5 \log f_V + C$ tomar $f_V \simeq B\left(T\right) $, $T=T\left({\lambda}_{eff}\right)$; suponer $B_{\lambda}\ \alpha\ {\lambda}^{-v} \mathrm{e}^{-\frac{hc}{\lambda k T}}$ (Ley de Wien); calcular $\left(\frac{\mathrm{d} \ln {f}_{\lambda}}{\mathrm{d}\lambda}\right)_{\lambda = {\lambda}_{eq}}$
+        \end{recommendation}
+    \end{problem}
+
+    \begin{problem}\label{prob:5}
+        ¿Cuál es el cambio pocentual en $f_V$ que representa el cambio $\delta V$ calculado en \ref{prob:4}?.
+    \end{problem}
+
+    \begin{problem}\label{prob:6}
+        Usando las tablas adjuntas (Referencia del COX) y considerando los tipos espectrales \emph{O9}, \emph{B0}, \emph{B2}, \emph{B5}, \emph{A0}, \emph{A5}, \emph{F0}, \emph{F5}, \emph{G0}, \emph{G5}, \emph{K0}, \emph{K5} y \emph{M0}.
+
+        \begin{problempart}\label{prob:6:a}
+            Graficar $M_V$ vs. $\left(B-V\right)_{0}$ para cada clase de lumninosidad V, III y I.
+        \end{problempart}
+
+        \begin{problempart}\label{prob:6:b}
+            Calcular la temperatura de color $T_{BV}$ para los tipos espectrales de la secuencia principal.
+        \end{problempart}
+
+        \begin{problempart}\label{prob:6:c}
+            Usando los datos de la tabla \ref{table:2} de \emph{colores intrínsecos} $\left(U-B\right)_O$, calcular las temperaturas de color $T_{UB}$.
+        \end{problempart}
+
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{c | c}
+                T. Sp.  & $\left(U-B\right)_{o}$ \\
+                &  \\[-0.8em]\hline
+                &  \\[-0.8em]
+                BO V  & -1.06 \\
+                B5 V  & -0.55 \\
+                A0 V  & -0.02 \\
+                A5 V  &  0.10 \\
+                F0 V  &  0.07 \\
+                F5 V  &  0.03 \\
+                G0 V  &  0.05 \\
+                G5 V  &  0.19 \\
+                K0 V  &  0.47 \\
+                K5 V  &  1.10 \\
+                M0 V  &  1.28 \\
+                \hline
+            \end{tabular}
+            \caption{
+                Colores intrínsecos $\left(U-B\right)_O$
+            }\label{table:2}
+        \end{table}
+
+        \begin{problempart}\label{prob:6:d}
+            Comparar los tipos de colores $T_{UV}$ y $T_{VB}$ de los tipos espectrales dados en \ref{prob:6:c}.
+        \end{problempart}
+
+        \begin{problempart}\label{prob:6:e}
+            Comparar las temperaturas de color $T_{BV}$ y $T_{UV}$ de los espectrales dados en \ref{prob:6:b} con las temperaturas espectrales de la tabla adjuntada.
+
+            \begin{itemize}
+                \item ¿Cuál de las tempraturas de color parece aproximarse mejor desde un punto de vista cuantitativo a la temperatura afectiva?
+                \item ¿Cúal de las tempraturas de color parece aproximarse mejor desde un punto de vista cualitativo a la temperatura efectiva?
+            \end{itemize}
+        \end{problempart}
+    \end{problem}
+
+    \begin{problem}\label{prob:7}
+        Dibuja un diagrama $\left(V-B\right)_O$ vs. $\left(B-V\right)_O$ pero los tipos espectrales del ejercicio \ref{prob:6:b}. Superponer en el mismo diagrama la relación color-color del cuerpo negro. El cuerpo negro ajusto bien las observaciones.
+    \end{problem}
+
+    \begin{problem}\label{prob:8}
+        Para los tipos espectrales de la tabla \ref{table:2}
+
+            \begin{problempart}\label{prob:8:a}
+                Calcular el coeficiente $Q$.
+            \end{problempart}
+
+            \begin{problempart}\label{prob:8:b}
+                Calcular Q suponiendo $T_{BV}$ = $T_{UB}$ = $T_{EH}$.
+            \end{problempart}
+
+            \begin{problempart}\label{prob:8:c}
+                Calcular Q usando sólo $T_{BV}$.
+            \end{problempart}
+
+            \begin{problempart}\label{prob:8:d}
+                Calcular Q usando sólo $T_{UB}$.
+            \end{problempart}
+    \end{problem}
+
+    \begin{problem}\label{prob:9}
+        Calcular un diagrama Log L9L0 vs Log $T_{EH}$ = para log $\left(RIRO\right)$ = -3, -2, -1, 0, +1, +2.
+
+            \begin{problempart}\label{prob:9:a}
+                Mostrar que la correccion bolometricas enre magnitudes NO SE QUE DICE  es igual a la correccion bolometrica entre magnitudes absolutas.
+            \end{problempart}
+    \end{problem}
+
+    \begin{problem}\label{prob:10}
+        Discutir porque la correccion bolometrica es funcion proncipalmente de la temperatura efectiva y no del sodio.
+
+        En esas condiciones la correccion bolometrica depende de la clase de luminosidad?¿Porque?
+    \end{problem}
+
+    \begin{problem}\label{prob:11}
+        Si $\log f_{\lambda} = a\log\lambda + b$ en un internolo $\left(NO SE QUE DICE\right)$ donde fx y el flujo monocromatico NO SE QUE DICE de una estrella, mientras que el gradiente de color en ese intermedio es $Q_{v1d2}$ = $\left(5+a\right)$.
+    \end{problem}
+
+    \begin{problem}\label{prob:12}
+        \begin{problempart}\label{prob:12:a}
+            Mostrar que el gradiente de color de una radiacion de cuerpo negro esta dado por
+            $$
+                \Phi = \frac{c_2}{T}\left(1 - \mathrm{e}^{-\frac{c_2}{\lambda T}}\right)
+            $$
+
+            $$
+                c_2 = \frac{hc}{k} \approx 1.43883\ \mathrm{cm \cdot K}
+            $$
+        \end{problempart}
+
+        \begin{problempart}\label{prob:12:b}
+            ¿En que region $\Phi = \frac{c_2}{\lambda T}$?
+        \end{problempart}
+
+        \begin{problempart}\label{prob:12:c}
+            Calcular $\Phi$ usando $\lambda = \frac{1}{2}\left(\lambda_B + \lambda_V\right)_{eq}$ y $T = T_{BV}$ para los tipos espectrales de \ref{prob:6:d}.
+        \end{problempart}
+    \end{problem}
+
+    \begin{problem}\label{prob:13}
+        Transofrmar
+            \begin{itemize}
+                \item $M_{V}$ en $M_{bol}$.
+                \item $M_{V}$ en $T_{BV}$.
+            \end{itemize}
+
+            Para los tipos espectrales de la tabla \ref{table:2} para las claves de limunosidad $V$, $IV$, $III$, $II$, $I_{b}$, $I_{a}$.
+
+            Usar para $V$, $IV$, $III$ los $\left(B-V\right)$ de las clase de luminosidad $V$. Para los supergigantes $III$, $I_{b}$, $I_{a}$ usar los datos de la tabla \ref{table:3}.
+    \end{problem}
+
+    \begin{problem}\label{prob:14}
+        Grafica los potenciales de ionizacion $\Xi$ de los elementos ``enrarecidos?'' como fuente para tipo espectral en función del logaritmo de la temperatura efectiva. Comentar.
+    \end{problem}
+
+    \begin{problem}\label{prob:15}
+        \begin{problempart}\label{prob:15:B}
+            Graficar $\log\left(\frac{L}{L_\odot}\right)$ vs $T_{BV}$ e interpretar, usando para ello el diagrama calculado en el ejecrcicio \ref{prob:4}.
+        \end{problempart}
+
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{c | c}
+                T. Sp.  & $\left(B-V\right)_{o}$ \\\\
+                  &  \\[-0.8em]\hline
+                  &  \\[-0.8em]
+                BO & -0.25 \\
+                A0 &  0.00 \\
+                F0 &  0.25 \\
+                G0 &  0.70 \\
+                G5 &  1.06 \\
+                K0 &  1.39 \\
+                K5 &  1.70 \\
+                MO &  1.94 \\
+                \hline
+            \end{tabular}
+            \caption{
+                Colores intrínsecos $\left(U-B\right)_O$
+            }\label{table:3}
+        \end{table}
+    \end{problem}
+\end{document}
